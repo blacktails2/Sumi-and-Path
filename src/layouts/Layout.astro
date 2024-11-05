@@ -19,7 +19,7 @@ const { title } = Astro.props;
 >
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<script>
+		<script is:inline>
 			(function(d) {
 				var config = {
 					kitId: 'nle2int',

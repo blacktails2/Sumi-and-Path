@@ -17,10 +17,14 @@ interface Props {
 const { name, jpname, bio, pic1, pic2, alt1, alt2, twitter, instagram, website} = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
 if (!images[pic1]) throw new Error(`"${pic1}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+if (!images[pic2]) throw new Error(`"${pic2}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <div class="profile-card column">
+  <div class="picture-frame">
     <Image class="mainpic" src={images[pic1]()} alt={alt1} />
+    <Image class="subpic" src={images[pic2]()} alt={alt2} />
+  </div>
 		<h4>{name}</h4>
     <h5>{jpname}</h5>
     <p set:html={bio}>
@@ -33,8 +37,22 @@ if (!images[pic1]) throw new Error(`"${pic1}" does not exist in glob: "src/asset
 	</a>
 </div>
 <style>
+  .picture-frame{
+    position: relative;
+    width: auto;
+  }
   .mainpic{
     width: 250px;
+    &:hover{
+      opacity: 0;
+    }
+  }
+  .subpic{
+    position: absolute;
+    left: 0;
+    width: 250px;
+    border: 1px solid var(--main);
+    z-index: -1;
   }
   h4{
     font-size: 1.4rem;
