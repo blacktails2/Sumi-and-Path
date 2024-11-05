@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+
+import strokeSumipathLogo from '../assets/sumipath_logotype_nodes.svg';
+---
+<div class="footer-main columns">
+  <Image class="stroke-logo" src={strokeSumipathLogo} alt="墨とPathのノード構造を線のみで表現した装飾画像" />
+  <div class="column is-5">
+    <h3>Podcast 墨とPath<br>sumi-to-path.com</h3>
+  </div>
+  <div class="column is-4">
+    <ul>
+      <li>Caster: Masaki Ando & Taisei Yoshida</li>
+      <li>Logotype: Masaki Ando & Taisei Yoshida</li>
+      <li>Develop: Masaki Ando</li>
+      <li>Jingle: 2024.10.4 窓が川を越える度に開くGoogleMap。心ばかりの机には爽健美茶。ロマンスカーにて by GarageYokotaBand</li>
+      <li>Typeface: Roume by Wolph Type, Ten Mincho Family by Adobe</li>
+      <li>Respect: はなれより。</li>
+    </ul>
+  </div>
+  <div class="column is-3">
+    <ul>
+      <li>Logotype Design: Glyphs</li>
+      <li>Framework: Astro, Bulma</li>
+      <li>Server: Netlify</li>
+      <li>CMS: Notion</li>
+    </ul>
+  </div>
+</div>
+<style lang="scss">
+  a{
+      color: var(--main);
+      text-decoration: none;
+    }
+  .footer-main{
+    position: relative;
+    padding-bottom: 80px;
+    padding-top: 30px;
+  }
+  .stroke-logo{
+      position: absolute;
+      width: 105vw;
+      max-width: none;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      opacity: 0.3;
+    }
+	h3{
+    font-family: var(--displayfont);
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 1;
+    font-feature-settings: "palt";
+    kerning: auto;
+  }
+  li{
+    font-size: 1rem;
+    line-height: 2;
+  }
+</style>

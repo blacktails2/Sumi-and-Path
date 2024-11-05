@@ -1,0 +1,58 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+interface Props {
+	name: string;
+  jpname: string;
+	bio: string;
+  pic1: string;
+  pic2: string;
+  alt1: string;
+  alt2: string;
+	twitter: string;
+	instagram: string;
+	website: string;
+}
+
+const { name, jpname, bio, pic1, pic2, alt1, alt2, twitter, instagram, website} = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
+if (!images[pic1]) throw new Error(`"${pic1}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+---
+
+<div class="profile-card column">
+    <Image class="mainpic" src={images[pic1]()} alt={alt1} />
+		<h4>{name}</h4>
+    <h5>{jpname}</h5>
+    <p set:html={bio}>
+		</p>
+    <a href={twitter} target="_blank">Twitter</a>
+    <a href={instagram} target="_blank">Instagram</a>
+    {website && (
+      <a href={website} target="_blank">Website</a>
+    )}
+	</a>
+</div>
+<style>
+  .mainpic{
+    width: 250px;
+  }
+  h4{
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+  h5{
+    font-size: 1rem;
+    margin-top: -0.25rem;
+    margin-bottom: 0.2rem;
+  }
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-align: justify;
+	}
+  a{
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+</style>

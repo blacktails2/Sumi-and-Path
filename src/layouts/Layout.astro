@@ -7,14 +7,28 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="jp">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="墨とPathは、書体デザイナーの安藤真生と吉田大成がゲストを呼び文字と生活について話すPodcast。界隈の著名人から学生時代の友人まで、さまざまな人を深掘ります。" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script>
+			(function(d) {
+				var config = {
+					kitId: 'nle2int',
+					scriptTimeout: 3000,
+					async: true
+				},
+				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})(document);
+		</script>
 	</head>
 	<body>
 		<slot />
@@ -25,26 +39,13 @@ const { title } = Astro.props;
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--main: #333333;
+		--primaryfont: "TenMinchoText-Regular", "ten-mincho-text", serif;
+		--displayfont: "TenMincho-Regular", "ten-mincho", serif;
+		font-family: "TenMinchoText-Regular", "ten-mincho-text", serif;
+		font-size: 15px;
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+		background: #ffffff;
 	}
 </style>
