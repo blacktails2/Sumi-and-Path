@@ -28,6 +28,7 @@ const { title } = Astro.props;
 				},
 				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 			})(document);
+
 		</script>
 	</head>
 	<body>
@@ -40,6 +41,7 @@ const { title } = Astro.props;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
 		--main: #333333;
+		--back: #ffffff;
 		--primaryfont: "TenMinchoText-Regular", "ten-mincho-text", serif;
 		--displayfont: "TenMincho-Regular", "ten-mincho", serif;
 		font-family: "TenMinchoText-Regular", "ten-mincho-text", serif;
@@ -47,5 +49,39 @@ const { title } = Astro.props;
 	}
 	html {
 		background: #ffffff;
+	}
+	p{
+		font-size: 1rem;
+		line-height: 1.75;
+		text-align: justify;
+		a{
+			color: var(--main);
+			text-decoration: underline;
+			text-decoration-thickness: 1px;
+			text-decoration-skip-ink: auto;
+			text-underline-offset: 2px;
+			&:hover{
+				text-underline-offset: -5px;
+			}
+		}
+	}
+	ul{
+		list-style-type: "- ";
+	}
+	li{
+		line-height: 1.75;
+		a{
+			color: var(--main);
+			text-decoration: underline;
+			text-decoration-thickness: 1px;
+			text-decoration-skip-ink: auto;
+			text-underline-offset: 2px;
+			&:hover{
+				text-underline-offset: -5px;
+			}
+		}
+		ul{
+			margin-left: 0.75rem;
+		}
 	}
 </style>

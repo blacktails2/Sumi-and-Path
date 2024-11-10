@@ -1,28 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Topbar from '../components/Topbar.astro';
 import Footer from '../components/Footer.astro';
+import Sidebar from '../components/Sidebar.astro';
 import Episode from '../components/Episode.astro';
 import ProfileCard from '../components/ProfileCard.astro';
 ---
 
 <Layout title="墨とPath 🖌️Podcast about Letters and Life.">
-	<main class="container is-fluid">
+	<main>
 		<Topbar></Topbar>
+		<Sidebar></Sidebar>
+		<div class="container is-fluid">
 		<div class="columns">
-			<div class="column is-3"></div>
-			<div class="column is-7">
-				<ul role="list" class="link-card-grid">
+			<div class="column is-10-desktop is-12-tablet is-9-widescreen is-9-fullhd">
+				<div class="link-card-grid">
 					<Episode></Episode>
-					<li id="about">
+					<div id="about">
 						<h3>墨とPathに<br>ついて</h3>
 						<p>
 							墨とPathは書体デザイナーの安藤真生 <a href="https://twitter.com/wolphtype">@wolphtype</a>と吉田大成 <a href="https://twitter.com/yoshi_typo">@yoshi_typo</a>が、あなたがインターネットで見たことがある人から私たちの隣人まで、多様なゲストを呼びながらゆるく話すPodcast。<br>
 							書体とレタリング、オンとオフ、仕事と生活などその人のさまざまな側面を話していきます。<br>
 							だいたい3ヶ月に1回ほど更新予定。Twitter（現X）にて<a href="https://twitter.com/intent/tweet?hashtags=墨とPath">#墨とPath</a> <a href="https://twitter.com/intent/tweet?hashtags=スミパス">#スミパス</a>で感想や質問などをしてもらえると嬉しいです。
 						</p>
-						<div class="profile columns">
+						<div class="profile columns is-variable is-4">
 							<ProfileCard
 								pic1='/src/assets/profile_masaki.jpeg'
 								alt1='安藤真生のプロフィール写真'
@@ -33,7 +34,7 @@ import ProfileCard from '../components/ProfileCard.astro';
 								twitter='https://twitter.com/wolphtype'
 								instagram='https://instagram.com/wolphtype'
 								website='https://wolphtype.com'
-								bio='1998年生まれ、岐阜県多治見市出身。<br>武蔵野美術大学視覚伝達デザイン学科、日本デザインオンスクリーン制作室の契約社員を経て、2022年から2023年にかけて英レディング大学大学院のコミュニケーションデザイン学科 書体デザインコースを修了。<br>2024年3月より、フランス・パリを拠点としてBlack [Foundry]にて書体デザイナーとして活動している。<br>犬と旅行、ガジェットの購入検討が好き。'
+								bio='Black [Foundry] 書体デザイナー。1998年岐阜県多治見市生まれ。<br>武蔵野美術大学視覚伝達デザイン学科、日本デザインオンスク��ーン制作室の契約社員を経て、2022年から2023年にかけて英レディング大学大学院のコミュニケーションデザイン学科 書体デザインコースを修了。2024年3月より、フランス・パリのBlack [Foundry]に就職、書体デザイナーとして活動している。<br>一番の趣味はゲームで、アトラス作品のRPGやセガのジェットセットラジオやソニックといったアクションゲーム、オープンワールド、FPSなど幅広く遊んでいる。また、幼少の頃からパソコンに慣れ親しみ、熱し易く冷め易い性格から書体デザイン以外にもWebサイト制作、動画編集、3Dなどを始めては続かずにいる。<br>将来は犬（おそらくコーギー）と暮らすのが目標。旅行の計画、ガジェットの購入検討が好き。'
 							></ProfileCard>
 							<ProfileCard
 								pic1='/src/assets/profile_taisei.jpeg'
@@ -45,21 +46,34 @@ import ProfileCard from '../components/ProfileCard.astro';
 								twitter='https://twitter.com/yoshi_typo'
 								instagram='https://www.instagram.com/yoshi_typo'
 								website=''
-								bio=''
+								bio='アドビ株式会社 書体デザイナー。1995年福岡県生まれ。2018年、武蔵野美術大学 基礎デザイン学科卒業後、アドビに入社。西塚 涼子の指導の元、「源ノ角ゴシック」「源ノ明朝」「貂明朝」の開発に携わる。共著書に『Glyphsではじめる フォント制作』『パスクール パスで描く文字デザインの学校』。<br>競技スマブラの観戦とマジック：ザ・ギャザリングが好き。Japan Open 2024 Top8。'
 							></ProfileCard>
 						</div>
-					</li>
-				</ul>
+					</div>
+				</div>
 			</div>
 		</div>
-		<Footer />
-	</main>
+	</div>
+</main>
+<Footer />
 </Layout>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerButton = document.querySelector('#hamburger-button');
+    const hamburgerMenu = document.querySelector('.hamburger');
 
+    if (hamburgerButton && hamburgerMenu) {
+      hamburgerButton.addEventListener('click', () => {
+        hamburgerMenu.classList.toggle('expanded');
+      });
+    }
+  });
+</script>
 <style>
 	main{
 		padding-top: 100px;
 		font-family: var(--primaryfont);
+		display: flex;
 	}
 	.astro-a {
 		position: absolute;
@@ -124,5 +138,11 @@ import ProfileCard from '../components/ProfileCard.astro';
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
+	}
+	ul{
+		list-style: none;
+	}
+	.link-card-grid{
+		max-width: 1200px;
 	}
 </style>

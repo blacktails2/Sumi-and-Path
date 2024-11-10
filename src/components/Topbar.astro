@@ -3,14 +3,21 @@
 ---
 <div class="topbar-main">
   <h2><a href="#">墨とPath</a></h2>
-  <ul>
-    <li><a href="/index.html#about">About</a></li>
-    <li><a href="">Spotify↗︎</a></li>
-    <li><a href="">Apple↗︎</a></li>
-    <li><a href="">Google↗︎</a></li>
+  <ul class="desktop-menu">
+    <a href="/index.html#about"><li>About</li></a>
+    <a class="is-hidden-mobile" href=""><li>Spotify↗︎</li></a>
+    <a class="is-hidden-mobile" href=""><li>Apple↗︎</li></a>
+    <a class="is-hidden-mobile" href=""><li>Google↗︎</li></a>
+    <a class="is-hidden-tablet" id="hamburger-button"><li>Follow</li></a>
+  </ul>
+  <ul class="hamburger">
+    <a href=""><li>Spotify↗︎</li></a>
+    <a href=""><li>Apple↗︎</li></a>
+    <a href=""><li>Google↗︎</li></a>
   </ul>
 </div>
 <style lang="scss">
+  @use "../../node_modules/bulma/sass/utilities/mixins";
   @font-face {
     font-family: SumiPath;
     src: url(/fonts/SumiPath-Regular.woff2);
@@ -26,11 +33,13 @@
     width: 100vw;
     display: flex;
     justify-content: space-between;
+    z-index: 5;
   }
 	h2{
     font-family: Sumipath, serif;
     font-weight: normal;
-    margin: -0.5rem 1.5rem 0;
+    line-height: 1;
+    margin: 0.6rem 1.5rem 0;
     font-size: 5rem;
     a{
       transition: none;
@@ -40,18 +49,67 @@
         -webkit-text-stroke: 1px #333333;   
       }
     }
+    @include mixins.mobile {
+      font-size: 3rem;
+    }
+    @include mixins.fullhd {
+      font-size: 6rem;
+    }
   }
-  ul{
+  .desktop-menu{
     display: flex;
-    margin: 1.5rem 1.5rem;
+    margin: 1.25rem 1.25rem;
+    a{
+      margin: 0 0 0 1rem;
+      &:hover{
+        text-decoration: underline;
+			  text-decoration-thickness: 1px;
+			  text-decoration-skip-ink: auto;
+			  text-underline-offset: 2px;
+      }
+    }
     li{
       font-family: var(--primaryfont);
       font-size: 1.1rem;
       list-style: none;
-      margin: 0 2rem 0 0;
+      padding: 0.25rem;
+      margin: 0 1.5rem 0 0;
+      border: 1px solid rgba(0,0,0,0);
+      &:hover{
+        border: 1px solid var(--main);
+      }
       &:last-child{
         margin: 0;
       }
+      @include mixins.mobile {
+        margin: 0 1.5rem 0 0;
+      }
     }
+  }
+  .hamburger{
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    border: 1px solid var(--main);
+    list-style: none;
+    padding: 1rem;
+    background-color: var(--back);
+    display: none;
+    a{
+      &:hover{
+        text-decoration: underline;
+			  text-decoration-thickness: 1px;
+			  text-decoration-skip-ink: auto;
+			  text-underline-offset: 2px;
+      }
+    }
+    li{
+      font-family: var(--primaryfont);
+      font-size: 1.1rem;
+      padding: 0 0.25rem;
+    }
+  }
+  .expanded{
+    display: block;
   }
 </style>

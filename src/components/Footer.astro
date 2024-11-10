@@ -3,31 +3,35 @@ import { Image } from 'astro:assets';
 
 import strokeSumipathLogo from '../assets/sumipath_logotype_nodes.svg';
 ---
-<div class="footer-main columns">
-  <Image class="stroke-logo" src={strokeSumipathLogo} alt="墨とPathのノード構造を線のみで表現した装飾画像" />
-  <div class="column is-5">
-    <h3>Podcast 墨とPath<br>sumi-to-path.com</h3>
+<div class="container is-fluid">
+  <div class="footer-main columns is-multiline">
+    <Image class="stroke-logo" src={strokeSumipathLogo} alt="墨とPathのノード構造を線のみで表現した装飾画像" />
+    <div class="column is-5-desktop is-12-tablet is-6-widescreen is-7-fullhd">
+      <h3>Podcast 墨とPath<br>sumi-to-path.com</h3>
+    </div>
+    <div class="column is-4-desktop is-6-tablet is-3-widescreen">
+      <ul>
+        <li>Caster: Masaki Ando & Taisei Yoshida</li>
+        <li>Logotype: Masaki Ando & Taisei Yoshida</li>
+        <li>Website Developent: Masaki Ando</li>
+        <li>Jingle: <a href="https://soundcloud.com/garageyokotaband/2024-10-4-googlemap?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">GarageYokotaBand</a></li>
+        <li>Typeface: Roume by Wolph Type,<br>Ten Mincho Family by Adobe</li>
+        <li>Respect: <a href="https://hanare-yory.com/">はなれより。</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <ul>
+        <li>Logotype Design: <a href="https://glyphsapp.com/">Glyphs</a></li>
+        <li>Framework: <a href="https://astro.build/">Astro</a>, <a href="https://bulma.io/">Bulma</a></li>
+        <li>Server: <a href="https://pages.cloudflare.com/">Cloudflare Pages</a></li>
+        <li>CMS: <a href="https://sanity.io">Sanity</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="column is-4">
-    <ul>
-      <li>Caster: Masaki Ando & Taisei Yoshida</li>
-      <li>Logotype: Masaki Ando & Taisei Yoshida</li>
-      <li>Develop: Masaki Ando</li>
-      <li>Jingle: GarageYokotaBand</li>
-      <li>Typeface: Roume by Wolph Type, Ten Mincho Family by Adobe</li>
-      <li>Respect: はなれより。</li>
-    </ul>
-  </div>
-  <div class="column is-3">
-    <ul>
-      <li>Logotype Design: Glyphs</li>
-      <li>Framework: Astro, Bulma</li>
-      <li>Server: Cloudflare Pages</li>
-      <li>CMS: Notion</li>
-    </ul>
-  </div>
+
 </div>
 <style lang="scss">
+  @use "../../node_modules/bulma/sass/utilities/mixins";
   a{
       color: var(--main);
       text-decoration: none;
@@ -36,9 +40,13 @@ import strokeSumipathLogo from '../assets/sumipath_logotype_nodes.svg';
     position: relative;
     padding-bottom: 80px;
     padding-top: 30px;
+    @include mixins.mobile{
+      padding-bottom: 50px;
+    }
   }
   .stroke-logo{
       position: absolute;
+      z-index: -1;
       width: 105vw;
       max-width: none;
       bottom: 0;
@@ -55,7 +63,11 @@ import strokeSumipathLogo from '../assets/sumipath_logotype_nodes.svg';
     kerning: auto;
     margin-top: 0.5rem;
   }
+  ul{
+    list-style: none;
+  }
   li{
+    font-family: var(--primaryfont);
     font-size: 1rem;
     line-height: 2;
   }

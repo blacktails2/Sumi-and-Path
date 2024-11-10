@@ -1,37 +1,86 @@
 ---
+import { getPosts } from "../sanity/api";
+import { PortableText } from 'astro-portabletext';
 
+const posts = await getPosts();
+const transformSpotifyURL = (url: string) => {
+  return url.replace("open.spotify.com/", "open.spotify.com/embed/");
+};
 ---
-
-<li class="episode-card">
-  <h4>stroke.01</h3>
-  <h3>東京とパリから、はじめまして。</h4>
-  <h5>2024.11.16</h5>
-  <p>
-    墨とPathというPodcastについて
-  </p>
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/4eLyXbt6WeeBl4O68ACeop?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</li>
-<style>
-	.episode-card {
+<ul>
+  {
+    posts.map((post: { SpotifyURL: string; publishedAt: string; numbering: string; title: string; speaker: string; body: any }) => (
+      <li class="episode-card" id={post.publishedAt}>
+        <h5 class="episode-date">{post.publishedAt}</h5>
+        <h4 class="episode-numbering">{post.numbering}</h4>
+        <h3 class="episode-title">{post.title}</h3>
+        <h4 class="episode-guest">{post.speaker}</h4>
+        <PortableText
+          value={post.body}
+        />
+        <iframe style="border-radius:12px" src={transformSpotifyURL(post.SpotifyURL) + "utm_source=generator"} width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </li>
+    ))
+  }
+</ul>
+<style lang="scss">
+  @use "../../node_modules/bulma/sass/utilities/mixins";
+  ul{
+    list-style: none;
+  }
+  .episode-card {
     padding: 50px 0;
+    border-top: 1px solid var(--main);
+		position: relative;
+		&:before{
+			content: "";
+			position: absolute;
+			height: 5px;
+			width: 5px;
+			border: 1px solid var(--main);
+			top: -3px;
+			left: -3px;
+			background-color: #ffffff;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			height: 5px;
+			width: 5px;
+			border: 1px solid var(--main);
+			top: -3px;
+			right: -3px;
+			background-color: #ffffff;
+		}
+    &:first-child{
+      border: none;
+    }
   }
-	h4 {
+	.episode-numbering {
 		font-size: 1.2rem;
+    margin-top: 0.5rem;
 	}
-  h3{
-    font-size: 2rem;
-    margin-top: -0.5rem;
-    margin-left: -0.2rem;
-    font-feature-settings: "palt";
-    kerning: auto;
-    letter-spacing: 0.05em;
-  }
-  h5{
+  .episode-date{
     font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin-left: 0.05rem;
   }
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 2rem;
-	}
+  .episode-title{
+    font-size: 2rem;
+    line-height: 1;
+    margin-top: 0.1rem;
+    margin-left: -0.15rem;
+    @include mixins.mobile {
+      font-size: 1.5rem;
+    }
+  }
+  .episode-guest{
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+  }
+	
+  iframe{
+    margin-top: 30px;
+  }
 
 </style>
