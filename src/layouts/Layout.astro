@@ -11,7 +11,7 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="墨とPathは、書体デザイナーの安藤真生と吉田大成がゲストを呼び文字と生活について話すPodcast。界隈の著名人から学生時代の友人まで、さまざまな人を深掘ります。" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link
   rel="stylesheet"
@@ -46,9 +46,14 @@ const { title } = Astro.props;
 		--displayfont: "TenMincho-Regular", "ten-mincho", serif;
 		font-family: "TenMinchoText-Regular", "ten-mincho-text", serif;
 		font-size: 15px;
+		
 	}
 	html {
 		background: #ffffff;
+		width: 100%;
+	}
+	body{
+		width: 100%;
 	}
 	p{
 		font-size: 1rem;
@@ -58,7 +63,7 @@ const { title } = Astro.props;
 			color: var(--main);
 			text-decoration: underline;
 			text-decoration-thickness: 1px;
-			text-decoration-skip-ink: auto;
+			text-decoration-skip-ink: none;
 			text-underline-offset: 2px;
 			&:hover{
 				text-underline-offset: -5px;
@@ -74,7 +79,7 @@ const { title } = Astro.props;
 			color: var(--main);
 			text-decoration: underline;
 			text-decoration-thickness: 1px;
-			text-decoration-skip-ink: auto;
+			text-decoration-skip-ink: none;
 			text-underline-offset: 2px;
 			&:hover{
 				text-underline-offset: -5px;
