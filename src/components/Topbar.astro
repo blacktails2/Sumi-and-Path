@@ -4,16 +4,16 @@
 <div class="topbar-main">
   <h2><a href="#">墨とPath</a></h2>
   <ul class="desktop-menu">
-    <a href="/index.html#about"><li>About</li></a>
-    <a class="is-hidden-mobile" href=""><li>Spotify↗︎</li></a>
-    <a class="is-hidden-mobile" href=""><li>Apple↗︎</li></a>
-    <a class="is-hidden-mobile" href=""><li>Google↗︎</li></a>
-    <a class="is-hidden-tablet" id="hamburger-button"><li>Follow</li></a>
+    <li><a href="/index.html#about">About</a></li>
+    <li class="is-hidden-mobile"><a href="">Spotify↗︎</a></li>
+    <li class="is-hidden-mobile"><a href="">Apple↗︎</a></li>
+    <li class="is-hidden-mobile"><a href="">Google↗︎</a></li>
+    <li class="is-hidden-tablet"><a id="hamburger-button">Follow</a></li>
   </ul>
   <ul class="hamburger">
-    <a href=""><li>Spotify↗︎</li></a>
-    <a href=""><li>Apple↗︎</li></a>
-    <a href=""><li>Google↗︎</li></a>
+    <li><a href="">Spotify↗︎</a></li>
+    <li><a href="">Apple↗︎</a></li>
+    <li><a href="">Google↗︎</a></li>
   </ul>
 </div>
 <style lang="scss">
@@ -59,25 +59,26 @@
   .desktop-menu{
     display: flex;
     margin: 1.25rem 1.25rem;
+    align-items: center;
     a{
-      margin: 0 0 0 1rem;
+      display: block;
+      padding: 0.25rem;
+      border: 1px solid rgba(0,0,0,0);
+      transition: none;
       &:hover{
         text-decoration: underline;
 			  text-decoration-thickness: 1px;
 			  text-underline-offset: 2px;
         text-decoration-skip-ink: none;
+        border: 1px solid var(--main);
       }
     }
     li{
       font-family: var(--primaryfont);
       font-size: 1.1rem;
       list-style: none;
-      padding: 0.25rem;
-      margin: 0 1.5rem 0 0;
-      border: 1px solid rgba(0,0,0,0);
-      &:hover{
-        border: 1px solid var(--main);
-      }
+      margin: 0 1rem 0 0;
+      height: auto;
       &:last-child{
         margin: 0;
       }
@@ -96,6 +97,7 @@
     background-color: var(--back);
     display: none;
     a{
+      padding: 0 0.25rem;
       &:hover{
         text-decoration: underline;
 			  text-decoration-thickness: 1px;
@@ -106,7 +108,6 @@
     li{
       font-family: var(--primaryfont);
       font-size: 1.1rem;
-      padding: 0 0.25rem;
     }
   }
   .expanded{
