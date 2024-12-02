@@ -1,148 +1,166 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Topbar from '../components/Topbar.astro';
-import Footer from '../components/Footer.astro';
-import Sidebar from '../components/Sidebar.astro';
-import Episode from '../components/Episode.astro';
-import ProfileCard from '../components/ProfileCard.astro';
+import Layout from "../layouts/Layout.astro";
+import Topbar from "../components/Topbar.astro";
+import Footer from "../components/Footer.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Episode from "../components/Episode.astro";
+import ProfileCard from "../components/ProfileCard.astro";
 ---
 
-<Layout title="墨とPath 🖌️Podcast about Letters and Life.">
-	<main>
-		<Topbar></Topbar>
-		<Sidebar></Sidebar>
-		<div class="container is-fluid">
-		<div class="columns">
-			<div class="column is-10-desktop is-12-tablet is-9-widescreen is-9-fullhd">
-				<div class="link-card-grid">
-					<Episode></Episode>
-					<div id="about">
-						<h3>墨とPathに<br>ついて</h3>
-						<p>
-							墨とPathは書体デザイナーの安藤真生 <a href="https://twitter.com/wolphtype">@wolphtype</a>と吉田大成 <a href="https://twitter.com/yoshi_typo">@yoshi_typo</a>が、あなたがインターネットで見たことがある人から私たちの隣人まで、多様なゲストを呼びながらゆるく話すPodcast。<br>
-							書体とレタリング、オンとオフ、仕事と生活などその人のさまざまな側面を話していきます。<br>
-							だいたい3ヶ月に1回ほど更新予定。Twitter（現X）にて<a href="https://twitter.com/intent/tweet?hashtags=墨とPath">#墨とPath</a> <a href="https://twitter.com/intent/tweet?hashtags=スミパス">#スミパス</a>で感想や質問などをしてもらえると嬉しいです。
-						</p>
-						<div class="profile columns is-variable is-4">
-							<ProfileCard
-								pic1='/src/assets/profile_masaki.jpeg'
-								alt1='安藤真生のプロフィール写真'
-								pic2='/src/assets/profile_masaki_sub.jpg'
-								alt2='安藤真生のインターネット上でのプロフィール画像'
-								name='Masaki Ando'
-								jpname='安藤 真生'
-								twitter='https://twitter.com/wolphtype'
-								instagram='https://instagram.com/wolphtype'
-								website='https://wolphtype.com'
-								bio='Black [Foundry] 書体デザイナー。1998年岐阜県多治見市生まれ。<br>武蔵野美術大学 視覚伝達デザイン学科、NDCでの有馬トモユキのアシスタントデザイナーを経て、2022年から2023年にかけて英レディング大学大学院の書体デザインコース（MATD）を修了。2024年3月より、フランス・パリのBlack [Foundry]に就職し、書体デザイナーとして活動している。<br>一番の趣味はゲームで、アトラス作品のRPGやセガのジェットセットラジオやソニックといったアクションゲーム、オープンワールド、FPSなど幅広く遊んでおり、スマブラSPに関してはコミュニティ大会のシーンに関わり、ツール開発や幾つかの大会のデザインに関わっている。また、小学生の頃からパソコンに慣れ親しみ、熱し易く冷め易い性格から書体デザイン以外にもWebサイト制作、動画編集、3Dなどを始めては続かずにいる。<br>将来は犬（おそらくコーギー）と暮らすのが目標。旅行の計画、ガジェットの購入検討が好き。'
-							></ProfileCard>
-							<ProfileCard
-								pic1='/src/assets/profile_taisei.jpeg'
-								alt1='吉田大成のプロフィール写真'
-								pic2='/src/assets/profile_taisei_sub.jpg'
-								alt2='吉田大成のインターネット上でのプロフィール画像'
-								name='Taisei Yoshida'
-								jpname='吉田 大成'
-								twitter='https://twitter.com/yoshi_typo'
-								instagram='https://www.instagram.com/yoshi_typo'
-								website=''
-								bio='アドビ株式会社 書体デザイナー。1995年福岡県福岡市生まれ。<br>2018年、武蔵野美術大学 基礎デザイン学科卒業後、アドビに入社。西塚 涼子の指導の元、「源ノ角ゴシック」「源ノ明朝」「貂明朝」の開発に携わる。共著書に『Glyphsではじめる フォント制作』『パスクール パスで描く文字デザインの学校』。書体デザインの他にはレタリングやタイトルロゴなどの制作が得意。<br>一番の趣味はマジック：ザ・ギャザリングというカードゲーム。Japan Open 2024という日本の公式大会で7位の成績を収めたことがある。主に攻撃的なデッキが好み。ゲーム関連だと競技スマブラの観戦も好きで、国内海外・平日休日問わずよく観戦している。プレイは友人とたまに4人乱闘で遊ぶ程度。<br>作業環境周りのガジェットやカメラのことはよく調べる。使用カメラはSONY a7C、RICOHのGR3など。購入検討しているガジェットについてXにポストし始めたら大体買う。'
-							></ProfileCard>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</main>
-<Footer />
+<Layout title="墨とPath ✑ Podcast about Letters and Life.">
+  <main>
+    <Topbar />
+    <Sidebar />
+    <div class="container is-fluid">
+      <div class="columns">
+        <div
+          class="column is-10-desktop is-12-tablet is-9-widescreen is-9-fullhd"
+        >
+          <div class="link-card-grid">
+            <Episode />
+            <div id="about">
+              <h3>墨とPathに<br />ついて</h3>
+              <p>
+                墨とPathは書体デザイナーの安藤真生 <a
+                  href="https://twitter.com/wolphtype">@wolphtype</a
+                >と吉田大成 <a href="https://twitter.com/yoshi_typo"
+                  >@yoshi_typo</a
+                >が、多様なゲストを招きゆるく語らうPodcast。<br />
+                書体とレタリング、オンとオフ、仕事と生活などその人のさまざまな側面を話していきます。<br
+                />
+                だいたい3ヶ月に1回ほど更新予定。Twitter（現X）にて<a
+                  href="https://twitter.com/intent/tweet?hashtags=墨とPath"
+                  >#墨とPath</a
+                >
+                <a href="https://twitter.com/intent/tweet?hashtags=スミパス"
+                  >#スミパス</a
+                >で感想や質問などをしてもらえると嬉しいです。<br />
+                匿名でのご感想やご質問、ご意見は<a
+                  href="https://marshmallow-qa.com/g3tvir6rzqa6abj"
+                  >マシュマロ</a
+                >までお気軽にご投稿ください。
+              </p>
+              <div class="profile columns is-variable is-4">
+                <ProfileCard
+                  pic1="/src/assets/profile_masaki.jpeg"
+                  alt1="安藤真生のプロフィール写真"
+                  pic2="/src/assets/profile_masaki_sub.jpg"
+                  alt2="安藤真生のインターネット上でのプロフィール画像"
+                  name="Masaki Ando"
+                  jpname="安藤 真生"
+                  twitter="https://twitter.com/wolphtype"
+                  instagram="https://instagram.com/wolphtype"
+                  website="https://wolphtype.com"
+                  bio="Black [Foundry] 書体デザイナー。1998年岐阜県多治見市生まれ。<br>武蔵野美術大学 視覚伝達デザイン学科、NDCでの有馬トモユキのアシスタントデザイナーを経て、2022年から2023年にかけて英レディング大学大学院の書体デザインコース（MATD）を修了。2024年3月より、フランス・パリのBlack [Foundry]に就職し、書体デザイナーとして活動している。<br>一番の趣味はゲームで、アトラス作品のRPGやセガのジェットセットラジオやソニックといったアクションゲーム、オープンワールド、FPSなど幅広く遊んでおり、スマブラSPに関してはコミュニティ大会のシーンに関わり、ツール開発や幾つかの大会のデザインに関わっている。また、小学生の頃からパソコンに慣れ親しみ、熱し易く冷め易い性格から書体デザイン以外にもWebサイト制作、動画編集、3Dなどを始めては続かずにいる。<br>将来は犬（おそらくコーギー）と暮らすのが目標。旅行の計画、ガジェットの購入検討が好き。"
+                />
+                <ProfileCard
+                  pic1="/src/assets/profile_taisei.jpeg"
+                  alt1="吉田大成のプロフィール写真"
+                  pic2="/src/assets/profile_taisei_sub.jpg"
+                  alt2="吉田大成のインターネット上でのプロフィール画像"
+                  name="Taisei Yoshida"
+                  jpname="吉田 大成"
+                  twitter="https://twitter.com/yoshi_typo"
+                  instagram="https://www.instagram.com/yoshi_typo"
+                  website=""
+                  bio="アドビ株式会社 書体デザイナー。1995年福岡県福岡市生まれ。<br>2018年、武蔵野美術大学 基礎デザイン学科卒業後、アドビに入社。西塚 涼子の指導の元、「源ノ角ゴシック」「源ノ明朝」「貂明朝」の開発に携わる。共著書に『Glyphsではじめる フォント制作』『パスクール パスで描く文字デザインの学校』。書体デザインの他にはレタリングやタイトルロゴなどの制作が得意。<br>一番の趣味はマジック：ザ・ギャザリングというカードゲーム。Japan Open 2024という日本の公式大会で7位の成績を収めたことがある。主に攻撃的なデッキが好み。ゲーム関連だと競技スマブラの観戦も好きで、国内海外・平日休日問わずよく観戦している。プレイは友人とたまに4人乱闘で遊ぶ程度。<br>作業環境周りのガジェットやカメラのことはよく調べる。使用カメラはSONY a7C、RICOHのGR3など。購入検討しているガジェットについてXにポストし始めたら大体買う。"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
 </Layout>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerButton = document.querySelector('#hamburger-button');
-    const hamburgerMenu = document.querySelector('.hamburger');
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburgerButton = document.querySelector("#hamburger-button");
+    const hamburgerMenu = document.querySelector(".hamburger");
 
     if (hamburgerButton && hamburgerMenu) {
-      hamburgerButton.addEventListener('click', () => {
-        hamburgerMenu.classList.toggle('expanded');
+      hamburgerButton.addEventListener("click", () => {
+        hamburgerMenu.classList.toggle("expanded");
       });
     }
   });
 </script>
 <style>
-	main{
-		padding-top: 100px;
-		font-family: var(--primaryfont);
-		display: flex;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	#about{
-		padding: 50px 0;
-		border-top: 1px solid var(--main);
-		position: relative;
-		&:before{
-			content: "";
-			position: absolute;
-			height: 5px;
-			width: 5px;
-			border: 1px solid var(--main);
-			top: -3px;
-			left: -3px;
-			background-color: #ffffff;
-		}
-		&:after{
-			content: "";
-			position: absolute;
-			height: 5px;
-			width: 5px;
-			border: 1px solid var(--main);
-			top: -3px;
-			right: -3px;
-			background-color: #ffffff;
-		}
-		h3{
-			font-size: 3rem;
-			margin-bottom: 1rem;
-			font-family: var(--displayfont);
-			font-feature-settings: "palt";
-			kerning: auto;
-			line-height: 100%;
-		}
-		a{
-			color: var(--main);
-			text-decoration: underline;
-			text-decoration-thickness: 1px;
-			text-decoration-skip-ink: none;
-			text-underline-offset: 2px;
-			&:hover{
-				text-underline-offset: -5px;
-			}
-		}
-	}
-	.profile{
-		margin-top: 30px;
-	}
-	h1 {
-		font-family: SumiPath, serif;
-		font-size: 10rem;
-		color: var(--main);
-		font-weight: normal;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	ul{
-		list-style: none;
-	}
-	.link-card-grid{
-		max-width: 1200px;
-	}
+  main {
+    padding-top: 100px;
+    font-family: var(--primaryfont);
+    display: flex;
+  }
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  #about {
+    padding: 50px 0;
+    border-top: 1px solid var(--main);
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      height: 5px;
+      width: 5px;
+      border: 1px solid var(--main);
+      top: -3px;
+      left: -3px;
+      background-color: #ffffff;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      width: 5px;
+      border: 1px solid var(--main);
+      top: -3px;
+      right: -3px;
+      background-color: #ffffff;
+    }
+    h3 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-family: var(--displayfont);
+      font-feature-settings: "palt";
+      kerning: auto;
+      line-height: 100%;
+    }
+    a {
+      color: var(--main);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-skip-ink: none;
+      text-underline-offset: 2px;
+      &:hover {
+        text-underline-offset: -5px;
+        display: inline-block;
+      }
+    }
+  }
+  .profile {
+    margin-top: 30px;
+  }
+  h1 {
+    font-family: SumiPath, serif;
+    font-size: 10rem;
+    color: var(--main);
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  ul {
+    list-style: none;
+  }
+  .link-card-grid {
+    max-width: 1200px;
+  }
 </style>
