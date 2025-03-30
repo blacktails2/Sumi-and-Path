@@ -2,11 +2,12 @@
 import { getPosts } from "../sanity/api";
 
 const posts = await getPosts();
+const reversedPosts = posts.reverse();
 ---
 <div class="sidebar is-hidden-mobile">
 	<ul>
   {
-    posts.map((post: { publishedAt: string; numbering: string; title: string }) => (
+    reversedPosts.map((post: { publishedAt: string; numbering: string; title: string }) => (
       <li class="sidebar-items"><a href={"#" + post.publishedAt}><span>{post.numbering}</span><br>{post.title}
       </a></li>
     ))
